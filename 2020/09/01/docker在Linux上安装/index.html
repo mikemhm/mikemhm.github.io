@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>高德天气接口api</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1"><meta name="description" content="个人分享"><meta name="keywords"><meta name="author" content="Mike"><link rel="short icon" href="/images/favicon.jpg"><link rel="icon" href="/images/favicon.jpg"><!--[if lt IE 9]>
+<script src="/js/modernizr.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/css/iconfont.css">
+
+<link rel="stylesheet" href="/css/index.css?v=202009010959.css">
+<link rel="stylesheet" href="/css/info.css?v=202009010959.css">
+<link href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css" rel="stylesheet"><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Mike博客" type="application/atom+xml">
+</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="http://mhmzq.cf">Mike博客</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="con_warp"><div class="infosbox"><div class="newsview"><h3 class="news_title">高德天气接口api</h3><div class="bloginfo"><ul><li class="author">作者：<a href="/">Mike</a></li><li class="lmname"><a href="/"></a></li><li class="timer">时间：2020-09-01 09:53:36</li><li class="view"><span id="busuanzi_value_page_pv">99</span><span>次访问</span></li></ul></div><div class="tags"></div><div class="news_con"><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上"><a href="#1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上" class="headerlink" title="1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上"></a>1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<h5 id="2、更新yum包-时间较久"><a href="#2、更新yum包-时间较久" class="headerlink" title="2、更新yum包(时间较久)"></a>2、更新yum包(时间较久)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-安装依赖包"><a href="#3-1-安装依赖包" class="headerlink" title="3.1 安装依赖包"></a>3.1 安装依赖包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2 </span><br></pre></td></tr></table></figure>
+<h5 id="3-2-设置阿里云镜像源"><a href="#3-2-设置阿里云镜像源" class="headerlink" title="3.2 设置阿里云镜像源"></a>3.2 设置阿里云镜像源</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo </span><br></pre></td></tr></table></figure>
+<h5 id="3-3-安装"><a href="#3-3-安装" class="headerlink" title="3.3 安装"></a>3.3 安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="4、启动Docker"><a href="#4、启动Docker" class="headerlink" title="4、启动Docker"></a>4、启动Docker</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+<h5 id="5、设置docker开机自启"><a href="#5、设置docker开机自启" class="headerlink" title="5、设置docker开机自启"></a>5、设置docker开机自启</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker.service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="6、使⽤Docker国内镜像（为Docker镜像下载提速，⾮必须）"><a href="#6、使⽤Docker国内镜像（为Docker镜像下载提速，⾮必须）" class="headerlink" title="6、使⽤Docker国内镜像（为Docker镜像下载提速，⾮必须）"></a>6、使⽤Docker国内镜像（为Docker镜像下载提速，⾮必须）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;daotools&#x2F;set_mirror.sh |</span><br><span class="line">sh -s http:&#x2F;&#x2F;fe8a7d6e.m.daocloud.io</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker stats</td>
+<td>查看运行状态</td>
+</tr>
+<tr>
+<td>systemctl start / restart / stop docker</td>
+<td>启动/重启/关闭</td>
+</tr>
+<tr>
+<td>docker start /stop / restart 容器id</td>
+<td>启动、停⽌、重启指定容器</td>
+</tr>
+<tr>
+<td>docker images</td>
+<td>列表本地所有镜像</td>
+</tr>
+<tr>
+<td>docker ps -a</td>
+<td>列表本地所有容器</td>
+</tr>
+<tr>
+<td>docker ps</td>
+<td>列表本地正在运行的所有容器</td>
+</tr>
+<tr>
+<td>docker ps -l</td>
+<td>查看最近创建的容器</td>
+</tr>
+<tr>
+<td>docker ps -n=个数</td>
+<td>查看最新创建的n个容器</td>
+</tr>
+<tr>
+<td>docker stop 容器id/name</td>
+<td>关闭正在运行的容器</td>
+</tr>
+<tr>
+<td>docker search关键词</td>
+<td>在Docker Hub中搜索镜像</td>
+</tr>
+<tr>
+<td>docker pull 镜像名称</td>
+<td>下载Docker镜像</td>
+</tr>
+<tr>
+<td>docker rmi 镜像id</td>
+<td>删除Docker镜像。加参数-f表示强制删除。</td>
+</tr>
+<tr>
+<td>docker rm 容器id</td>
+<td>删除Docker容器，</td>
+</tr>
+<tr>
+<td>docker run 镜像名称</td>
+<td>启动Docker镜像</td>
+</tr>
+<tr>
+<td>docker ps</td>
+<td>列表所有运⾏中的Docker容器。该命令参数⽐较多，-a：列表所有容器；-f：过滤；-q 只列表容器的id。</td>
+</tr>
+<tr>
+<td>docker version</td>
+<td>查看Docker版本信息</td>
+</tr>
+<tr>
+<td>docker info</td>
+<td>查看Docker系统信息，例如：CPU、内存、容器个数等等</td>
+</tr>
+<tr>
+<td>docker kill 容器id</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td>docker build -t标签名称 ⽬录</td>
+<td>构建Docker镜像，-t 表示指定⼀个标签</td>
+</tr>
+<tr>
+<td>docker tag</td>
+<td>为镜像打标签</td>
+</tr>
+<tr>
+<td>docker run -d</td>
+<td>后台运⾏</td>
+</tr>
+<tr>
+<td>docker run -P</td>
+<td>随机端⼝映射</td>
+</tr>
+<tr>
+<td>docker logs -f [容器名称或容器ID]</td>
+<td>查看容器日志</td>
+</tr>
+<tr>
+<td>docker run -p</td>
+<td>指定端⼝映射格式：ip:hostPort:containerPort ip::containerPort hostPort:containerPort containerPort</td>
+</tr>
+</tbody></table>
+<ul>
+<li>sudo docker ps -a -q // 查看所有容器ID<br>sudo docker stop $(sudo docker ps -a -q) //  stop停止所有容器<br>sudo docker  rm $(sudo docker ps -a -q) //   remove删除所有容器</li>
+<li>docker run <code>--name</code> nginx -d <code>--rm</code> <code>--restart</code>=always -v /usr/local/nginx/nginx.conf:/etc/nginx/nginx.conf -p 8080:80 nginx</li>
+<li>-d # 后台运⾏</li>
+<li>-p 将<strong>宿主机端⼝</strong><code>8080</code>端口绑定到<strong>容器端⼝</strong><code>80</code>  </li>
+<li>-v 将宿主机<code>/usr/local/nginx</code>目录挂载到容器的<code>/etc/nginx</code>目录下</li>
+<li><code>--name</code> 创建容器名字</li>
+<li><code>--rm</code>停止容器时，删除容器</li>
+<li><code>--restart</code>docker重启时，容器自动重启</li>
+</ul>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker search -s 30 tomcat</span><br><span class="line">docker inspect -f &#123;&#123;.State.Pid&#125;&#125; 44fc0f0582d9</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">启动时添加 -dit</span><br><span class="line"></span><br><span class="line">进入命令 docker exec -it PID &#x2F;bin&#x2F;bash  </span><br></pre></td></tr></table></figure>
+
+</div></div><div class="nextinfo"><p>上一篇：没有了</p><p>下一篇：<a href="/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/">高德天气接口api</a></p></div><div class="news_pl"><div id="comment_container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+<script>const gitalk = new Gitalk({
+    clientID: 'you github Client ID',
+    clientSecret: 'you github Client Secret',
+    repo: 'you github repository',
+    owner: 'you github repository owner',
+    admin: ['you github repository owner'],
+    id: md5("2020/09/01/docker在Linux上安装/"),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: true  // Facebook-like distraction free mode
+})
+gitalk.render('comment_container')</script></div></div></div></main><aside class="r_box"><div class="card box"><h2>我的名片</h2><div class="box_con"><p>网名：mikemhm </p>
+<p>职业：Java劝退师</p>
+<p>Email：bicc49@163.com</p>
+</div></div><div class="category box"><h2>文章分类</h2><div class="box_con"></div></div><div class="wechat box"><h2>我的微信</h2><div class="box_con"><img src="/images/wechat.png"></div></div></aside></article><footer><section class="footer_bottom"><div class="footer_container"><p class="copyright">Design by
+<a href='https://mhmzq.cf' target='_blank'>mikemhm</a>
+京ICP备8848
+</p><ul class="social_network"></ul></div></section></footer><div class="cd-top"><i class="iconfont icon-top"></i></div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/scrollreveal.js"></script>
+<script src="/js/hc-sticky.js"></script>
+<script src="/js/canvas-nest.js" type="text/javascript" color="47,135,193" opacity="0.7" zIndex="-2" count="199"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/common.js?v=202009010959.js"></script>
+<script src="/js/index.js?v=202009010959.js"></script>
+</body></html>
