@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Mike博客</title>
   
   
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="http://mhmzq.cf/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://mhmzq.cf/"/>
   <updated>2020-08-25T08:40:02.113Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://mhmzq.cf/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Mike</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>高德天气接口api</title>
-    <link href="http://yoursite.com/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/"/>
-    <id>http://yoursite.com/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/</id>
+    <link href="http://mhmzq.cf/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/"/>
+    <id>http://mhmzq.cf/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/</id>
     <published>2020-08-25T07:40:36.436Z</published>
     <updated>2020-08-25T08:40:02.113Z</updated>
     
@@ -40,9 +40,30 @@
   </entry>
   
   <entry>
+    <title>HEXO 安装教程</title>
+    <link href="http://mhmzq.cf/2020/08/25/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://mhmzq.cf/2020/08/25/Hexo%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+    <published>2020-08-25T07:23:52.008Z</published>
+    <updated>2020-09-01T01:18:29.101Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p><h1 id="1、安装nodejs"><a href="#1、安装nodejs" class="headerlink" title="1、安装nodejs"></a>1、安装nodejs</h1><h1 id="2、安装git"><a href="#2、安装git" class="headerlink" title="2、安装git"></a>2、安装git</h1><p><a href="http://fangzh.top/2018/2018090514/">参考文章</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1、安装nodejs&quot;&gt;&lt;a href=&quot;#1、安装nodejs&quot; class=&quot;headerlink&quot; title=&quot;1、安装nodejs&quot;&gt;&lt;/a&gt;1、安装nodejs&lt;/h1&gt;&lt;h1 id=&quot;2、安装git&quot;&gt;&lt;a href=&quot;#2</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/08/25/hello-world/"/>
-    <id>http://yoursite.com/2020/08/25/hello-world/</id>
+    <link href="http://mhmzq.cf/2020/08/25/hello-world/"/>
+    <id>http://mhmzq.cf/2020/08/25/hello-world/</id>
     <published>2020-08-25T07:05:35.094Z</published>
     <updated>2020-08-25T07:05:35.094Z</updated>
     
