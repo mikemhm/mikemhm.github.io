@@ -6,7 +6,7 @@
   <link href="http://mhmzq.cf/atom.xml" rel="self"/>
   
   <link href="http://mhmzq.cf/"/>
-  <updated>2020-09-01T03:07:57.148Z</updated>
+  <updated>2020-09-04T01:45:08.976Z</updated>
   <id>http://mhmzq.cf/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://mhmzq.cf/2020/09/01/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/"/>
     <id>http://mhmzq.cf/2020/09/01/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/</id>
     <published>2020-09-01T02:41:45.000Z</published>
-    <updated>2020-09-01T03:07:57.148Z</updated>
+    <updated>2020-09-04T01:45:08.976Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 图片文章&#x2F;Snipaste_2020-09-01_10-19-59.png This is an example image %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/2020/09/01/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/Snipaste_2020-09-01_10-19-59.png"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;图片&quot;&gt;&lt;a href=&quot;#图片&quot; class=&quot;headerlink&quot; title=&quot;图片&quot;&gt;&lt;/a&gt;图片&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span </summary>
+    <summary type="html">&lt;h1 id=&quot;图片&quot;&gt;&lt;a href=&quot;#图片&quot; class=&quot;headerlink&quot; title=&quot;图片&quot;&gt;&lt;/a&gt;图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2020/09/01/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/Snipaste_20</summary>
       
     
     
