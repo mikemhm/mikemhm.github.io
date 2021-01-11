@@ -6,7 +6,7 @@
   <link href="http://mhmzq.cf/atom.xml" rel="self"/>
   
   <link href="http://mhmzq.cf/"/>
-  <updated>2021-01-09T03:45:07.194Z</updated>
+  <updated>2021-01-09T11:08:53.412Z</updated>
   <id>http://mhmzq.cf/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx安装rtmp模块</title>
+    <link href="http://mhmzq.cf/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/"/>
+    <id>http://mhmzq.cf/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/</id>
+    <published>2021-01-09T05:18:00.000Z</published>
+    <updated>2021-01-09T11:08:53.412Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p><h1 id="1、下载资源"><a href="#1、下载资源" class="headerlink" title="1、下载资源"></a>1、下载资源</h1><ul><li>一、从 <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a> 下载Nginx资源</li></ul><img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-19-15.png" style="height:50%;width:auto"><ul><li><p>二、下载rtmp补丁</p><p><code>wget https://github.com/arut/nginx-rtmp-module/archive/master.zip</code></p></li></ul><h1 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h1><ul><li>一、需安装gcc和openssl以及zip解压</li></ul><pre><code class="json">yum -y install gcc  yum -y install gcc-c++  yum  -y install openssl openssl-develyum install -y unzip zip</code></pre><ul><li>二、解压资源</li></ul><pre><code class="json">tar -zxvf nginx-1.18.0.tar.gzunzip master.zip</code></pre><ul><li>三、进入Nginx</li></ul><pre><code class="json">cd nginx-1.18.0mkdir build./configure --prefix=/usr/local/mynginx/nginx-1.18.0/build --add-module=/usr/local/mynginx/nginx-rtmp-module-master</code></pre><img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-27-35.png" style="height:50%;width:auto"><p>看到这个就成功了。</p><pre><code class="json">make -f objs/Makefilemake install</code></pre><p>这时，build目录中的就是编译完成的Nginx程序。</p><img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-32-28.png" style="height:50%;width:auto">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1、下载资源&quot;&gt;&lt;a href=&quot;#1、下载资源&quot; class=&quot;headerlink&quot; title=&quot;1、下载资源&quot;&gt;&lt;/a&gt;1、下载资源&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;一、从 &lt;a href=&quot;http://nginx.org/en/do</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>如何访问另一台电脑的vm</title>

@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>nginx安装rtmp模块</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1"><meta name="description" content="个人分享"><meta name="keywords"><meta name="author" content="Mike"><link rel="short icon" href="/images/favicon.jpg"><link rel="icon" href="/images/favicon.jpg"><!--[if lt IE 9]>
+<script src="/js/modernizr.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/css/iconfont.css">
+
+<link rel="stylesheet" href="/css/index.css?v=202101111033.css">
+<link rel="stylesheet" href="/css/info.css?v=202101111033.css">
+<link href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css" rel="stylesheet"><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Mike博客" type="application/atom+xml">
+</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="http://mhmzq.cf">Mike博客</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="con_warp"><div class="infosbox"><div class="newsview"><h3 class="news_title">nginx安装rtmp模块</h3><div class="bloginfo"><ul><li class="author">作者：<a href="/">Mike</a></li><li class="lmname"><a href="/"></a></li><li class="timer">时间：2021-01-09 13:18:00</li><li class="view"><span id="busuanzi_value_page_pv">99</span><span>次访问</span></li></ul></div><div class="tags"></div><div class="news_con"><p>[TOC]</p>
+<h1 id="1、下载资源"><a href="#1、下载资源" class="headerlink" title="1、下载资源"></a>1、下载资源</h1><ul>
+<li>一、从 <a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a> 下载Nginx资源</li>
+</ul>
+<img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-19-15.png" style="height:50%;width:auto">
+
+<ul>
+<li><p>二、下载rtmp补丁</p>
+<p><code>wget https://github.com/arut/nginx-rtmp-module/archive/master.zip</code></p>
+</li>
+</ul>
+<h1 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h1><ul>
+<li>一、需安装gcc和openssl以及zip解压</li>
+</ul>
+<pre><code class="json">yum -y install gcc  
+yum -y install gcc-c++  
+
+yum  -y install openssl openssl-devel
+
+yum install -y unzip zip</code></pre>
+<ul>
+<li>二、解压资源</li>
+</ul>
+<pre><code class="json">tar -zxvf nginx-1.18.0.tar.gz
+unzip master.zip</code></pre>
+<ul>
+<li>三、进入Nginx</li>
+</ul>
+<pre><code class="json">cd nginx-1.18.0
+mkdir build
+./configure --prefix=/usr/local/mynginx/nginx-1.18.0/build --add-module=/usr/local/mynginx/nginx-rtmp-module-master</code></pre>
+<img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-27-35.png" style="height:50%;width:auto">
+
+<p>看到这个就成功了。</p>
+<pre><code class="json">make -f objs/Makefile
+make install
+</code></pre>
+<p>这时，build目录中的就是编译完成的Nginx程序。</p>
+<img src="/2021/01/09/nginx%E5%AE%89%E8%A3%85rtmp%E6%A8%A1%E5%9D%97/Snipaste_2021-01-09_13-32-28.png" style="height:50%;width:auto">
+
+</div></div><div class="nextinfo"><p>上一篇：没有了</p><p>下一篇：<a href="/2021/01/09/%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AE%E5%8F%A6%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84vm/">如何访问另一台电脑的vm</a></p></div><div class="news_pl"><div id="comment_container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+<script>const gitalk = new Gitalk({
+    clientID: 'you github Client ID',
+    clientSecret: 'you github Client Secret',
+    repo: 'you github repository',
+    owner: 'you github repository owner',
+    admin: ['you github repository owner'],
+    id: md5("2021/01/09/nginx安装rtmp模块/"),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: true  // Facebook-like distraction free mode
+})
+gitalk.render('comment_container')</script></div></div></div></main><aside class="r_box"><div class="card box"><h2>我的名片</h2><div class="box_con"><p>网名：mikemhm </p>
+<p>职业：Java劝退师</p>
+<p>Email：bicc49@163.com</p>
+</div></div><div class="category box"><h2>文章分类</h2><div class="box_con"></div></div><div class="wechat box"><h2>我的微信</h2><div class="box_con"><img src="/images/wechat.png"></div></div></aside></article><footer><section class="footer_bottom"><div class="footer_container"><p class="copyright">Design by
+<a href='https://mhmzq.cf' target='_blank'>mikemhm</a>
+京ICP备8848
+</p><ul class="social_network"></ul></div></section></footer><div class="cd-top"><i class="iconfont icon-top"></i></div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/scrollreveal.js"></script>
+<script src="/js/hc-sticky.js"></script>
+<script src="/js/canvas-nest.js" type="text/javascript" color="47,135,193" opacity="0.7" zIndex="-2" count="199"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/common.js?v=202101111033.js"></script>
+<script src="/js/index.js?v=202101111033.js"></script>
+</body></html>
