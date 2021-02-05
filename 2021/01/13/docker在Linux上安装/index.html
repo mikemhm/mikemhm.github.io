@@ -3,10 +3,10 @@
 <![endif]-->
 <link rel="stylesheet" href="/css/iconfont.css">
 
-<link rel="stylesheet" href="/css/index.css?v=202101131052.css">
-<link rel="stylesheet" href="/css/info.css?v=202101131052.css">
+<link rel="stylesheet" href="/css/index.css?v=202102051422.css">
+<link rel="stylesheet" href="/css/info.css?v=202102051422.css">
 <link href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/github.min.css" rel="stylesheet"><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Mike博客" type="application/atom+xml">
-</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="http://mhmzq.cf">Mike博客</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="con_warp"><div class="infosbox"><div class="newsview"><h3 class="news_title">docker在Linux上安装</h3><div class="bloginfo"><ul><li class="author">作者：<a href="/">Mike</a></li><li class="lmname"><a href="/"></a></li><li class="timer">时间：2020-09-01 09:53:36</li><li class="view"><span id="busuanzi_value_page_pv">99</span><span>次访问</span></li></ul></div><div class="tags"></div><div class="news_con"><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上"><a href="#1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上" class="headerlink" title="1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上"></a>1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上</h5><pre><code>uname -r</code></pre>
+</head><body><header id="header" class="header-navigation"><nav><div class="logo"><a href="http://mhmzq.cf">Mike博客</a></div><h2 id="mnavh"><span class="navicon"></span></h2><ul id="starlist"><li><a href="/">首页</a></li><li><a href="/time.html">时间轴</a></li></ul><div class="searchbox"><div id="search_bar" class="search_bar"><input id="keyboard" placeholder="想搜点什么呢.." type="text" name="keyboard" autocomplete="off" class="input"><p class="search_ico"><span></span></p></div></div></nav></header><article><main><div class="con_warp"><div class="infosbox"><div class="newsview"><h3 class="news_title">docker在Linux上安装</h3><div class="bloginfo"><ul><li class="author">作者：<a href="/">Mike</a></li><li class="lmname"><a href="/"></a></li><li class="timer">时间：2021-01-13 11:28:06</li><li class="view"><span id="busuanzi_value_page_pv">99</span><span>次访问</span></li></ul></div><div class="tags"></div><div class="news_con"><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上"><a href="#1、查看内核版本-Docker需要64位版本，同时内核版本在3-10以上" class="headerlink" title="1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上"></a>1、查看内核版本(Docker需要64位版本，同时内核版本在3.10以上</h5><pre><code>uname -r</code></pre>
 <h5 id="2、更新yum包-时间较久"><a href="#2、更新yum包-时间较久" class="headerlink" title="2、更新yum包(时间较久)"></a>2、更新yum包(时间较久)</h5><pre><code>yum -y update</code></pre>
 <h5 id="3-1-安装依赖包"><a href="#3-1-安装依赖包" class="headerlink" title="3.1 安装依赖包"></a>3.1 安装依赖包</h5><pre><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2 </code></pre>
 <h5 id="3-2-设置阿里云镜像源"><a href="#3-2-设置阿里云镜像源" class="headerlink" title="3.2 设置阿里云镜像源"></a>3.2 设置阿里云镜像源</h5><pre><code>sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo </code></pre>
@@ -136,7 +136,7 @@ docker inspect -f &#123;&#123;.State.Pid&#125;&#125; 44fc0f0582d9</code></pre>
 <h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><pre><code>启动时添加 -dit
 
 进入命令 docker exec -it PID /bin/bash  </code></pre>
-</div></div><div class="nextinfo"><p>上一篇：<a href="/2020/09/01/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/">hexo 解决图片显示问题</a></p><p>下一篇：<a href="/2020/08/25/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/">高德天气接口api</a></p></div><div class="news_pl"><div id="comment_container"></div>
+</div></div><div class="nextinfo"><p>上一篇：<a href="/2021/01/13/%E9%AB%98%E5%BE%B7-%E5%A4%A9%E6%B0%94api/">高德天气接口api</a></p><p>下一篇：<a href="/2021/01/13/hello-world/">Hello World</a></p></div><div class="news_pl"><div id="comment_container"></div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -148,7 +148,7 @@ docker inspect -f &#123;&#123;.State.Pid&#125;&#125; 44fc0f0582d9</code></pre>
     repo: 'you github repository',
     owner: 'you github repository owner',
     admin: ['you github repository owner'],
-    id: md5("2020/09/01/docker在Linux上安装/"),      // Ensure uniqueness and length less than 50
+    id: md5("2021/01/13/docker在Linux上安装/"),      // Ensure uniqueness and length less than 50
     distractionFreeMode: true  // Facebook-like distraction free mode
 })
 gitalk.render('comment_container')</script></div></div></div></main><aside class="r_box"><div class="card box"><h2>我的名片</h2><div class="box_con"><p>网名：mikemhm </p>
@@ -162,6 +162,6 @@ gitalk.render('comment_container')</script></div></div></div></main><aside class
 <script src="/js/scrollreveal.js"></script>
 <script src="/js/hc-sticky.js"></script>
 <script src="/js/canvas-nest.js" type="text/javascript" color="47,135,193" opacity="0.7" zIndex="-2" count="199"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/highlight.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/java.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.9/languages/javascript.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/common.js?v=202101131052.js"></script>
-<script src="/js/index.js?v=202101131052.js"></script>
+<script src="/js/common.js?v=202102051422.js"></script>
+<script src="/js/index.js?v=202102051422.js"></script>
 </body></html>
